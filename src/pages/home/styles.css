@@ -1,0 +1,29 @@
+.cv-generator {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+.form-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    width: 100%;
+}
+
+.form-item {
+    flex-basis: 100%;
+}
+
+@media (min-width: 768px) {
+    .form-row {
+        flex-wrap: nowrap;
+    }
+
+    .form-item {
+        flex-basis: 50%;
+    }
+}
