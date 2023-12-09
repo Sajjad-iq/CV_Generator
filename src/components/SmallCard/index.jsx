@@ -1,6 +1,6 @@
 import { Button } from 'antd';
 
-const SkillCard = ({ SkillTitle, Delete }) => {
+const SmallCard = ({ SkillTitle, Delete }) => {
 
     return (
         <div
@@ -12,4 +12,4 @@ const SkillCard = ({ SkillTitle, Delete }) => {
     );
 };
 
-export default SkillCard;
+export default SmallCard;

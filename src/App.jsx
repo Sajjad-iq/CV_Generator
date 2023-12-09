@@ -7,7 +7,7 @@ import { MyContext } from './context/data';
 
 const App = () => {
 
-  const { formValues, ExperienceCards, SkillsCards, EducationCards } = useContext(MyContext)
+  const { formValues, ExperienceCards, SkillsCards, EducationCards, LanguagesCards } = useContext(MyContext)
 
   return (
 
@@ -26,6 +26,9 @@ const App = () => {
               Experience={ExperienceCards}
               Skills={SkillsCards}
               Education={EducationCards}
+              Email={formValues.email}
+              Phone={formValues.phone}
+              Languages={LanguagesCards}
             />
           </PDFViewer>
           <Link style={{ fontSize: "1.5rem", position: "absolute", top: "100px", left: "50px", color: "red", fontWeight: "bolder" }} to={"/"}>Back</Link>

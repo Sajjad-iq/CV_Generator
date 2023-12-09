@@ -14,17 +14,20 @@ const MyContextProvider = ({ children }) => {
         jobTitle: "",
         linkedinUrl: "",
         portfolioLink: "",
+        email: "",
+        phone: "",
     });
 
     const [ExperienceCards, setExperienceCards] = useState([]);
     const [SkillsCards, setSkillsCards] = useState([]);
     const [EducationCards, setEducationCards] = useState([]);
+    const [LanguagesCards, setLanguagesCards] = useState([]);
     const updateFormValues = (values) => {
         setFormValues(values);
     };
 
     return (
-        <MyContext.Provider value={{ formValues, updateFormValues, ExperienceCards, setExperienceCards, SkillsCards, setSkillsCards, EducationCards, setEducationCards }}>
+        <MyContext.Provider value={{ formValues, updateFormValues, ExperienceCards, setExperienceCards, SkillsCards, setSkillsCards, EducationCards, setEducationCards, LanguagesCards, setLanguagesCards }}>
             {children}
         </MyContext.Provider>
     );

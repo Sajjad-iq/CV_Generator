@@ -1,4 +1,4 @@
-import { styles } from "../../PdfCV/styles"
+import { styles } from "../styles"
 import { Text, View } from '@react-pdf/renderer';
 import { Li } from "./Li";
 

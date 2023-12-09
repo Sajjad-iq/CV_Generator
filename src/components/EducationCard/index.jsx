@@ -6,7 +6,7 @@ const { Meta } = Card;
 const EducationCard = ({ EducationTitle, UniversityName, startDate, endDate, Delete }) => {
     return (
         <Card
-            style={{ boxShadow: '0 4px 8px 0 rgba(0, 0, 0, 0.2)', backgroundColor: 'white' }}
+            style={{ boxShadow: '0 4px 8px 0 rgba(0, 0, 0, 0.2)', backgroundColor: 'white', margin: "10px 0" }}
         >
             <Meta title={EducationTitle} description={UniversityName} />
             <section style={{ display: "flex" }}>

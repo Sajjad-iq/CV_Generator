@@ -1,10 +1,11 @@
 import { Document, Page, Text, View } from '@react-pdf/renderer';
 import { styles } from './styles';
-import { PdfExperienceCard } from '../shared/PdfCV/PdfExperienceCard';
-import { PdfSkillCard } from '../shared/PdfCV/PdfSkillCard';
-import { PdfEducationCard } from '../shared/PdfCV/PdfEducationCard';
+import { PdfExperienceCard } from './Components/PdfExperienceCard'
+import { PdfSkillCard } from './Components/PdfSkillCard';
+import { PdfEducationCard } from './Components/PdfEducationCard';
+import { PdfLanguageCard } from './Components/PdfLanguageCard';
 
-export const PdfCV = ({ fullName, jobTitle, git, LinkedIn, Location, About, Experience, Skills, Education }) => {
+export const PdfCV = ({ fullName, jobTitle, git, LinkedIn, Location, Email, Phone, About, Experience, Skills, Education, Languages }) => {
     return (
         <Document>
             <Page size={"A4"}>
@@ -18,11 +19,11 @@ export const PdfCV = ({ fullName, jobTitle, git, LinkedIn, Location, About, Expe
                             <View style={styles.contact}>
                                 <View style={styles.contactItem}>
                                     <Text style={styles.ulHeader}>Email:</Text>
-                                    <Text style={styles.contactText}>johndoe@gmail.com</Text>
+                                    <Text style={styles.contactText}>{Email}</Text>
                                 </View>
                                 <View style={styles.contactItem}>
                                     <Text style={styles.ulHeader}>Phone:</Text>
-                                    <Text style={styles.contactText}>(123) 456-7890</Text>
+                                    <Text style={styles.contactText}>{Phone}</Text>
                                 </View>
                                 <View style={styles.contactItem}>
                                     <Text style={styles.ulHeader}>Git:</Text>
@@ -69,6 +70,15 @@ export const PdfCV = ({ fullName, jobTitle, git, LinkedIn, Location, About, Expe
                                         <View style={{ display: "flex", flexDirection: "row", flexWrap: "wrap", margin: "5px 0" }}>
                                             {Skills ? Skills.map((e) => <PdfSkillCard key={e}
                                                 SkillTitle={e} />) : ""}
+                                        </View>
+                                    </View>
+
+
+                                    <View style={styles.section}>
+                                        <Text style={styles.subsectionTitle}>Languages</Text>
+                                        <View style={{ display: "flex", flexDirection: "row", flexWrap: "wrap", margin: "5px 0" }}>
+                                            {Languages ? Languages.map((e) => <PdfLanguageCard key={e}
+                                                LanguageName={e} />) : ""}
                                         </View>
                                     </View>
 

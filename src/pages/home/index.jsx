@@ -6,12 +6,7 @@ import { useNavigate } from "react-router-dom"
 import { MyContext } from '../../context/data';
 import { fields } from '../../utils/Schema/Constant/fields';
 import './styles.css'
-import { AddExperience } from '../../components/AddExperience';
-import { TheExperience } from '../../components/Experience';
-import { AddSkills } from '../../components/AddSkills';
-import { Skills } from '../../components/Skills';
-import { AddEducation } from '../../components/AddEducation';
-import { Educations } from '../../components/Educations';
+import { AddExperience, TheExperience, AddSkills, Skills, AddEducation, Educations, AddLanguage, Languages } from '../../components'
 
 
 const Home = () => {
@@ -50,6 +45,7 @@ const Home = () => {
                             name="fullName"
                             onChange={formik.handleChange}
                             onBlur={formik.handleBlur}
+                            value={formik.values.fullName}
                         />
                     </Form.Item>
 
@@ -62,6 +58,8 @@ const Home = () => {
                             name="jobTitle"
                             onChange={formik.handleChange}
                             onBlur={formik.handleBlur}
+                            value={formik.values.jobTitle}
+
                         />
                     </Form.Item>
                 </div>
@@ -78,6 +76,8 @@ const Home = () => {
                             name="portfolioLink"
                             onChange={formik.handleChange}
                             onBlur={formik.handleBlur}
+                            value={formik.values.portfolioLink}
+
                         />
                     </Form.Item>
 
@@ -92,6 +92,42 @@ const Home = () => {
                             name="geoLocation"
                             onChange={formik.handleChange}
                             onBlur={formik.handleBlur}
+                            value={formik.values.geoLocation}
+
+                        />
+                    </Form.Item>
+                </div>
+
+                <div className="form-row">
+                    <Form.Item
+                        className="form-item"
+                        label="Email"
+                        name="email"
+                        validateStatus={formik.errors.portfolioLink && formik.touched.portfolioLink ? 'error' : ''}
+                        help={formik.errors.portfolioLink && formik.touched.portfolioLink ? formik.errors.portfolioLink : null}
+                    >
+                        <Input
+                            name="email"
+                            onChange={formik.handleChange}
+                            onBlur={formik.handleBlur}
+                            value={formik.values.email}
+
+                        />
+                    </Form.Item>
+
+                    <Form.Item
+                        className="form-item"
+                        label="Phone Number"
+                        name="phone"
+                        validateStatus={formik.errors.geoLocation && formik.touched.geoLocation ? 'error' : ''}
+                        help={formik.errors.geoLocation && formik.touched.geoLocation ? formik.errors.geoLocation : null}
+                    >
+                        <Input
+                            name="phone"
+                            onChange={formik.handleChange}
+                            onBlur={formik.handleBlur}
+                            value={formik.values.phone}
+
                         />
                     </Form.Item>
                 </div>
@@ -108,6 +144,8 @@ const Home = () => {
                             name="gitUrl"
                             onChange={formik.handleChange}
                             onBlur={formik.handleBlur}
+                            value={formik.values.gitUrl}
+
                         />
                     </Form.Item>
 
@@ -115,6 +153,7 @@ const Home = () => {
                         className="form-item"
                         label="LinkedIn URL"
                         name="linkedinUrl"
+                        value={formik.values.linkedinUrl}
                         validateStatus={formik.errors.linkedinUrl && formik.touched.linkedinUrl ? 'error' : ''}
                         help={formik.errors.linkedinUrl && formik.touched.linkedinUrl ? formik.errors.linkedinUrl : null}
                     >
@@ -137,19 +176,21 @@ const Home = () => {
                         name="aboutYou"
                         onChange={formik.handleChange}
                         onBlur={formik.handleBlur}
+                        value={formik.values.aboutYou}
+
                     />
                 </Form.Item>
 
-                <AddExperience />
-
-                <TheExperience />
-
                 <AddSkills />
-
                 <Skills />
 
-                <AddEducation />
+                <AddExperience />
+                <TheExperience />
 
+                <AddLanguage />
+                <Languages />
+
+                <AddEducation />
                 <Educations />
 
                 <Form.Item className="form-item">
