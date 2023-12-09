@@ -119,7 +119,6 @@ export const styles = StyleSheet.create({
         paddingBottom: 10,
         color: '#3E0097',
         fontWeight: "bold",
-        marginBottom: 10
     },
     rowSection: {
         display: "flex",

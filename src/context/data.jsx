@@ -1,9 +1,7 @@
 import React, { createContext, useState } from 'react';
 
-// Create a new context
 const MyContext = createContext({});
 
-// Create a context provider component
 const MyContextProvider = ({ children }) => {
 
     const [formValues, setFormValues] = useState({

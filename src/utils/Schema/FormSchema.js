@@ -7,5 +7,7 @@ export const validationSchema = Yup.object().shape({
     geoLocation: Yup.string().required('Geo Location is required'),
     linkedinUrl: Yup.string().required('LinkedIn URL is required'),
     gitUrl: Yup.string().required('Git Url required'),
-    aboutYou: Yup.string().required('About You is required')
+    aboutYou: Yup.string().required('About You is required'),
+    email: Yup.string().email().required('Email is required'),
+    phone: Yup.number().required('Phone Number is required')
 });

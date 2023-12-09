@@ -5,5 +5,7 @@ export const fields = [
     "gitUrl",
     "jobTitle",
     "linkedinUrl",
-    "portfolioLink"
+    "portfolioLink",
+    'email',
+    'phone'
 ]

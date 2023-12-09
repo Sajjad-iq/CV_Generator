@@ -10,6 +10,9 @@ import ExperienceCard from "./ExperienceCard";
 import { Languages } from "./Languages";
 import { Skills } from "./Skills";
 import SmallCard from "./SmallCard";
-
-
-export { PdfCV, AddEducation, AddExperience, AddLanguage, AddSkills, EducationCard, Educations, TheExperience, ExperienceCard, Languages, Skills, SmallCard }
+import { NameAndTitle } from "./NameAndTitle";
+import { PortfolioAndLocation } from "./PortfolioAndLocation";
+import { PhoneAndEmail } from "./PhoneAndEmail";
+import { GitAndLinkedIn } from "./GitAndLinkedIn";
+import { AboutYou } from "./AboutYou";
+export { AboutYou, GitAndLinkedIn, PhoneAndEmail, PortfolioAndLocation, NameAndTitle, PdfCV, AddEducation, AddExperience, AddLanguage, AddSkills, EducationCard, Educations, TheExperience, ExperienceCard, Languages, Skills, SmallCard }

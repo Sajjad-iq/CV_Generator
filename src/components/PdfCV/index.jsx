@@ -1,9 +1,6 @@
 import { Document, Page, Text, View } from '@react-pdf/renderer';
 import { styles } from './styles';
-import { PdfExperienceCard } from './Components/PdfExperienceCard'
-import { PdfSkillCard } from './Components/PdfSkillCard';
-import { PdfEducationCard } from './Components/PdfEducationCard';
-import { PdfLanguageCard } from './Components/PdfLanguageCard';
+import { PdfExperienceCard, PdfSkillCard, PdfEducationCard, PdfLanguageCard } from './Components';
 
 export const PdfCV = ({ fullName, jobTitle, git, LinkedIn, Location, Email, Phone, About, Experience, Skills, Education, Languages }) => {
     return (
@@ -42,6 +39,7 @@ export const PdfCV = ({ fullName, jobTitle, git, LinkedIn, Location, Email, Phon
 
                         {/* left side */}
                         <View style={styles.rowSection}>
+
                             <View style={styles.leftColumn}>
                                 <View style={styles.section}>
                                     <Text style={styles.subsectionTitle}>Experience</Text>
@@ -59,42 +57,40 @@ export const PdfCV = ({ fullName, jobTitle, git, LinkedIn, Location, Email, Phon
 
                             {/* right side */}
                             <View style={styles.rightColumn}>
+                                <Text style={styles.subsectionTitle}>Summary</Text>
+                                <Text style={styles.summaryTitle}>
+                                    {About}
+                                </Text>
+
                                 <View style={styles.section}>
-                                    <Text style={styles.subsectionTitle}>Summary</Text>
-                                    <Text style={styles.summaryTitle}>
-                                        {About}
-                                    </Text>
-
-                                    <View style={styles.section}>
-                                        <Text style={styles.subsectionTitle}>Skills</Text>
-                                        <View style={{ display: "flex", flexDirection: "row", flexWrap: "wrap", margin: "5px 0" }}>
-                                            {Skills ? Skills.map((e) => <PdfSkillCard key={e}
-                                                SkillTitle={e} />) : ""}
-                                        </View>
+                                    <Text style={styles.subsectionTitle}>Skills</Text>
+                                    <View style={{ display: "flex", flexDirection: "row", flexWrap: "wrap", margin: "5px 0" }}>
+                                        {Skills ? Skills.map((e) => <PdfSkillCard key={e}
+                                            SkillTitle={e} />) : ""}
                                     </View>
+                                </View>
 
 
-                                    <View style={styles.section}>
-                                        <Text style={styles.subsectionTitle}>Languages</Text>
-                                        <View style={{ display: "flex", flexDirection: "row", flexWrap: "wrap", margin: "5px 0" }}>
-                                            {Languages ? Languages.map((e) => <PdfLanguageCard key={e}
-                                                LanguageName={e} />) : ""}
-                                        </View>
+                                <View style={styles.section}>
+                                    <Text style={styles.subsectionTitle}>Languages</Text>
+                                    <View style={{ display: "flex", flexDirection: "row", flexWrap: "wrap", margin: "5px 0" }}>
+                                        {Languages ? Languages.map((e) => <PdfLanguageCard key={e}
+                                            LanguageName={e} />) : ""}
                                     </View>
+                                </View>
 
-                                    <View style={styles.section}>
-                                        <Text style={styles.subsectionTitle}>Education</Text>
-                                        {Education ? Education.map((e) => <PdfEducationCard
-                                            EducationTitle={e.title}
-                                            UniversityName={e.university}
-                                            startDate={e.startDate}
-                                            endDate={e.endDate}
-                                            key={e.title}
-                                        />)
+                                <View style={styles.section}>
+                                    <Text style={styles.subsectionTitle}>Education</Text>
+                                    {Education ? Education.map((e) => <PdfEducationCard
+                                        EducationTitle={e.title}
+                                        UniversityName={e.university}
+                                        startDate={e.startDate}
+                                        endDate={e.endDate}
+                                        key={e.title}
+                                    />)
 
-                                            :
-                                            null}
-                                    </View>
+                                        :
+                                        null}
                                 </View>
                             </View>
                         </View>
