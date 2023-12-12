@@ -20,6 +20,7 @@ const MyContextProvider = ({ children }) => {
     const [SkillsCards, setSkillsCards] = useState([]);
     const [EducationCards, setEducationCards] = useState([]);
     const [LanguagesCards, setLanguagesCards] = useState([]);
+
     const updateFormValues = (values) => {
         setFormValues(values);
     };

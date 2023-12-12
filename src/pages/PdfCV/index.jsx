@@ -2,7 +2,9 @@ import { Document, Page, Text, View } from '@react-pdf/renderer';
 import { styles } from './styles';
 import { PdfExperienceCard, PdfSkillCard, PdfEducationCard, PdfLanguageCard } from './Components';
 
-export const PdfCV = ({ fullName, jobTitle, git, LinkedIn, Location, Email, Phone, About, Experience, Skills, Education, Languages }) => {
+export const PdfCV = ({ fullName, jobTitle, git, LinkedIn, location, Email, Phone, About, Experience, Skills, Education, Languages }) => {
+
+
     return (
         <Document>
             <Page size={"A4"}>
@@ -32,7 +34,7 @@ export const PdfCV = ({ fullName, jobTitle, git, LinkedIn, Location, Email, Phon
                                 </View>
                                 <View style={styles.contactItem}>
                                     <Text style={styles.ulHeader}>Location:</Text>
-                                    <Text style={styles.contactText}>{Location}</Text>
+                                    <Text style={styles.contactText}>{location}</Text>
                                 </View>
                             </View>
                         </View>

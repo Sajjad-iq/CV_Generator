@@ -1,4 +1,3 @@
-import { PdfCV } from "./PdfCV";
 import { AddEducation } from "./AddEducation";
 import { AddExperience } from "./AddExperience";
 import { AddLanguage } from "./AddLanguage";
@@ -15,4 +14,4 @@ import { PortfolioAndLocation } from "./PortfolioAndLocation";
 import { PhoneAndEmail } from "./PhoneAndEmail";
 import { GitAndLinkedIn } from "./GitAndLinkedIn";
 import { AboutYou } from "./AboutYou";
-export { AboutYou, GitAndLinkedIn, PhoneAndEmail, PortfolioAndLocation, NameAndTitle, PdfCV, AddEducation, AddExperience, AddLanguage, AddSkills, EducationCard, Educations, TheExperience, ExperienceCard, Languages, Skills, SmallCard }
+export { AboutYou, GitAndLinkedIn, PhoneAndEmail, PortfolioAndLocation, NameAndTitle, AddEducation, AddExperience, AddLanguage, AddSkills, EducationCard, Educations, TheExperience, ExperienceCard, Languages, Skills, SmallCard }
