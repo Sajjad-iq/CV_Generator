@@ -1,6 +1,21 @@
 import { Input, Form } from 'antd';
+import { useContext, useEffect, useRef } from 'react';
+import { MyContext } from '../../context/data';
 
 export const PortfolioAndLocation = ({ formik }) => {
+
+    const PortfolioREf = useRef()
+    const LocationREf = useRef()
+    const { formValues } = useContext(MyContext)
+
+    useEffect(() => {
+        if (!PortfolioREf.current) return
+        if (!LocationREf.current) return
+
+        PortfolioREf.current.input.value = formValues.portfolioLink
+        LocationREf.current.input.value = formValues.geoLocation
+    }, [])
+
     return (
         <div className="form-row">
             <Form.Item
@@ -15,6 +30,7 @@ export const PortfolioAndLocation = ({ formik }) => {
                     onChange={formik.handleChange}
                     onBlur={formik.handleBlur}
                     value={formik.values.portfolioLink}
+                    ref={PortfolioREf}
                 />
             </Form.Item>
 
@@ -30,6 +46,7 @@ export const PortfolioAndLocation = ({ formik }) => {
                     onChange={formik.handleChange}
                     onBlur={formik.handleBlur}
                     value={formik.values.geoLocation}
+                    ref={LocationREf}
                 />
             </Form.Item>
         </div>

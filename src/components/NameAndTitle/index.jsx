@@ -1,6 +1,20 @@
 import { Input, Form } from 'antd';
+import { useContext, useEffect, useRef } from 'react';
+import { MyContext } from '../../context/data';
 
 export const NameAndTitle = ({ formik }) => {
+
+    const NameREf = useRef()
+    const JobREf = useRef()
+    const { formValues } = useContext(MyContext)
+
+    useEffect(() => {
+        if (!NameREf.current) return
+        if (!JobREf.current) return
+
+        NameREf.current.input.value = formValues.fullName
+        JobREf.current.input.value = formValues.jobTitle
+    }, [])
     return (
         <div className="form-row">
             <Form.Item
@@ -14,7 +28,7 @@ export const NameAndTitle = ({ formik }) => {
                     name="fullName"
                     onChange={formik.handleChange}
                     onBlur={formik.handleBlur}
-                    value={formik.values.fullName}
+                    ref={NameREf}
                 />
             </Form.Item>
 
@@ -29,8 +43,7 @@ export const NameAndTitle = ({ formik }) => {
                     name="jobTitle"
                     onChange={formik.handleChange}
                     onBlur={formik.handleBlur}
-                    value={formik.values.jobTitle}
-
+                    ref={JobREf}
                 />
             </Form.Item>
         </div>)
