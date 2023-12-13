@@ -6,7 +6,7 @@ export const PdfCV = ({ fullName, jobTitle, git, LinkedIn, location, Email, Phon
 
 
     return (
-        <Document>
+        <Document style={{ width: "100dvw" }}>
             <Page size={"A4"}>
                 <View style={styles.body}>
                     <View style={styles.container}>
