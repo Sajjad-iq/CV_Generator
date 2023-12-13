@@ -9,7 +9,6 @@ export const AboutYou = ({ formik }) => {
 
     useEffect(() => {
         if (!AboutREf.current) return
-        console.log(AboutREf.current)
         AboutREf.current.resizableTextArea.textArea.value = formValues.aboutYou
     }, [])
     return (

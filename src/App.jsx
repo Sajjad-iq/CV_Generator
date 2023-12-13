@@ -17,12 +17,12 @@ const App = () => {
       <Route path="/CV" element={
         <div style={{ width: "100vw" }}>
 
-          <nav style={{ display: "flex", maxWidth: "100vw", justifyContent: "space-between", padding: "10px 15px" }}>
+          <nav style={{ display: "flex", width: "100vw", justifyContent: "space-between", padding: "10px 15px" }}>
             <Button><Link style={{ textDecoration: "none" }} to={"/"}>Back</Link></Button>
             <DownloadButton />
           </nav>
 
-          <PDFViewer style={{ width: "100vw", height: "100vh" }}>
+          <PDFViewer style={{ width: "100%", height: "100vh" }}>
             <PdfCV
               fullName={formValues.fullName}
               jobTitle={formValues.jobTitle}
